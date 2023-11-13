@@ -1,0 +1,28 @@
+{
+  "name": "vue-route-loader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimonMarcelLinden/vue-route-loader.git"
+  },
+  "keywords": [
+    "vue",
+    "router",
+    "routes",
+    "route-loader",
+    "loader",
+    "dynamic",
+    "routes"
+  ],
+  "author": "Simon Marcel Linden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SimonMarcelLinden/vue-route-loader/issues"
+  },
+  "homepage": "https://github.com/SimonMarcelLinden/vue-route-loader#readme"
+}
