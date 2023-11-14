@@ -1,5 +1,4 @@
 # Vue Route Loader
-![npm version](https://img.shields.io/npm/v/vue-route-loader.svg)
 ![vue-route-loader version](https://img.shields.io/npm/v/vue-route-loader.svg)
 ![Vue version](https://img.shields.io/badge/vue-3.3.8-green.svg)
   
@@ -30,24 +29,34 @@ npm install vue-route-loader
 ```
 
 ## Usage
-1. Import the Module:
-Import **vue-route-loader** in your project where you need to generate routes.
 
-2. Configure Source Directory:
-Specify the directory of your Vue components to generate routes. For example:
+1. **vue.config.js**: Configure the VueRouteLoaderPlugin in your Vue application's webpack configuration:
 
 ```javascript
-const sourceDirectory = path.join(__dirname, '../src/pages');
-```
-3. Generate Routes:
-Use **vue-route-loader** to generate routes, which will create a **generatedRoutes.ts** file in your specified output path.
+const { defineConfig } = require('@vue/cli-service')
+const VueRouteLoaderPlugin = require('vue-route-loader/VueRouteLoaderPlugin');
 
-4. Integrate with Vue Application:
-Integrate the generated routes with your Vue application's router setup.
+module.exports = defineConfig({
+	transpileDependencies: true,
+	configureWebpack: {
+		plugins: [
+			new VueRouteLoaderPlugin({ path: './src/pages' })
+		]
+	}
+})
+```
+
+2. **main.ts**: Integrate the route loader with your main Vue application file:
+
+```javascript
+import App from './App.vue'
+import { createApp } from 'vue-route-loader';
+
+createApp(App).mount('#app')
+```
 
 ## Customization
-- **Route Patterns**: Adjust the route generation logic in the generateRoutes function to match your directory structure and routing preferences.
-- **Error Handling**: Customize the error handling within the script for various read errors.
+- 
 
 ## Contributing
 Contributions to improve vue-route-loader are welcome. Please follow the standard Git workflow:
@@ -62,9 +71,6 @@ This project is licensed under the MIT License.
 
 ## Author
 * Simon Marcel Linden
-* Contact: [Your Contact Information]
-
-
-Just replace `[Your Contact Information]` with your actual contact details. This `README.md` is structured to provide a clear overview of the project, including installation, usage, customization, contributing guidelines, license, and author information.
+* [Contact](https://github.com/SimonMarcelLinden/)
 
 Copyright (c) SimonMarcelLinden.
