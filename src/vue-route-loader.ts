@@ -7,12 +7,14 @@
  * @since 1.0.0
  */
 
-import { createApp as baseCreateApp, App, Component } from 'vue';
-import { createRouter, createWebHistory } from 'vue-router';
+import type { Component } from 'vue';
+const { createApp: baseCreateApp, App } = require('vue');
+const { createRouter, createWebHistory } = require('vue-router');
 
-import generatedRoutes from './generatedRoutes';
+const generatedRoutes = require('./routes');
 
-export { default as NotFoundPage } from './pages/404.error.vue';
+const NotFoundPage = require('./pages/404.error.js').default;
+module.exports.NotFoundPage = NotFoundPage;
 
 /**
  * Creates a Vue.js application with optional configuration options.
@@ -40,3 +42,5 @@ function createApp(rootComponent: Component) {
 
 	return app;
 }
+
+module.exports.createApp = createApp;
