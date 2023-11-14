@@ -1,18 +1,17 @@
-import { Options, Vue } from 'vue-class-component';
+import { defineComponent } from 'vue';
 
-@Options({
-	name: "404",
+export default defineComponent({
+	name: 'Error404Page',
 	components: {},
+	setup() {
+
+	},
 	meta: {
 		title: '404 - Page not found',
 		tags: [
-			{ name: 'author', value: 'Simon Mrcel Linden' },
+			{ name: 'author', value: 'Simon Marcel Linden' },
 			{ name: 'description', value: '404 - Page not found.' },
 			{ name: 'og:description', value: '404 - Page not found.' }
 		],
 	},
-
-})
-export default class Error404Page extends Vue {
-
-}
+});
